@@ -8,7 +8,7 @@ Corner.Parent = Frame
 Frame.Size = UDim2.new(0, 276,0, 374)
 Frame.Position = UDim2.new(0.778, 0,0.054, 0)
 Frame.BackgroundColor = BrickColor.new("Smoky grey")
-local Text = Instance.new("TextLabel")
+local Text = Instance.new("TextBox")
 Text.Parent = Gui
 Text.Text = "CoolHubV2"
 Text.Size = UDim2.new(0, 200,0, 50)
@@ -28,21 +28,9 @@ Button.BackgroundColor = BrickColor.new("Dark grey")
 Button.TextColor = BrickColor.new("Institutional white")
 Corner:Clone().Parent = Text
 Corner:Clone().Parent = Button
-Button.MouseButton1Click:Connect(function()
-	game.Workspace.CurrentCamera.CameraType = Enum.CameraType.Custom
-	game.Players.LocalPlayer.Team = game.Teams:FindFirstChild("Gru")
-	game.Players.LocalPlayer.IsPlaying.Value = true
-	if game.Players.LocalPlayer.Character:FindFirstChild("Shirt") then
-		game.Players.LocalPlayer.Character.Shirt.ShirtTemplate = "https://www.roblox.com/catalog/802124505/Class-D"
-	end
-	if game.Players.LocalPlayer.Character:FindFirstChild("Pants") then
-		game.Players.LocalPlayer.Character.Pants.PantsTemplate = "https://www.roblox.com/catalog/8636093379/Class-D"
-	end
-
-end)
 local Button2 = Instance.new("TextButton")
 Button2.Parent = Gui
-Button2.Text = "Glock17"
+Button2.Text = "Get gun"
 Button2.Size = UDim2.new(0, 200,0, 50)
 Button2.Position = UDim2.new(0.800, 0,0.259, 0)
 Button2.RichText = true
@@ -51,9 +39,9 @@ Button2.BackgroundColor = BrickColor.new("Dark grey")
 Button2.TextColor = BrickColor.new("Institutional white")
 Corner:Clone().Parent = Button2
 Button2.MouseButton1Click:Connect(function()
-	local Clone = game.Workspace.Debris.Glock17:Clone()
-	local Clone2 = game.Workspace.Debris.Glock17:Clone()
-	local Clone3 = game.Workspace.Debris.Glock17:Clone()
+	local Clone = game.Workspace.Debris:FindFirstChild(Text.Text):Clone()
+	local Clone2 = game.Workspace.Debris:FindFirstChild(Text.Text):Clone()
+	local Clone3 = game.Workspace.Debris:FindFirstChild(Text.Text):Clone()
 	local Weld = Instance.new("Weld")
 	local Weld2 = Instance.new("Weld")
 	local Weld3 = Instance.new("Weld")
